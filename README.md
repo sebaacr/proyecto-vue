@@ -1,3 +1,5 @@
+# Actividad 7: Recepción de Textos Escolares
+
 ## Diagnóstico inicial
 
 1. **Problema detectado:** Clase activa mal comparada en el botón de Recepciones.
@@ -19,3 +21,9 @@
 5. **Problema detectado:** Falta de reactividad y binding correcto en formularios y componentes de la aplicación.
    - **Archivo:** `src/components/Libros.vue` / `src/components/Recepciones.vue`
    - **Posible causa:** Errores en la vinculación de props, validaciones de campos (como ISBN) y manejo del estado global.
+
+## Estado compartido
+
+- **Problema encontrado:** La función `useRecepcionStore()` no devolvía el objeto `state`, por lo que ningún componente podía acceder a los datos compartidos. Además, había diferencias en los nombres de las llaves (`id_reception` vs `id_recepcion`) y la cantidad estaba guardada como texto.
+- **Corrección realizada:** Se actualizó `return state` en la función exportada y se normalizó la propiedad `id_recepcion` e `cantidad` como tipo numérico.
+- **Por qué debe compartirse:** El estado debe ser compartido para que las recepciones, libros, proveedores e ítems estén centralizados y accesibles desde cualquier componente de la aplicación de forma reactiva.

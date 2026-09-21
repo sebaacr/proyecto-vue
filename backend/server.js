@@ -7,7 +7,17 @@ app.get('/', (req, res) => {
   res.send('Servidor de empresa funcionando correctamente')
 })
 
+// Ruta GET para obtener el catálogo completo o filtrado por categoría
 app.get('/api/servicios', (req, res) => {
+  const { categoria } = req.query
+
+  if (categoria) {
+    const serviciosFiltrados = servicios.filter(
+      item => item.categoria.toLowerCase() === categoria.toLowerCase()
+    )
+    return res.json(serviciosFiltrados)
+  }
+
   res.json(servicios)
 })
 

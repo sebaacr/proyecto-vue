@@ -35,3 +35,11 @@
   - `req.params`: Permite capturar los parámetros de segmento definidos en la ruta (`:id`).
   - `Number()`: Convierte el parámetro recibido (que siempre llega como texto/string) a tipo numérico para poder realizar la búsqueda estricta (`===`) con el ID de los servicios.
   - **Estado 404:** Es el código de respuesta HTTP (*Not Found*) utilizado cuando el recurso consultado no existe en los registros.
+
+  ## Parte 8 – Filtro por categoría
+
+- **Implementación:** Se actualizó la ruta `GET /api/servicios` para evaluar `req.query.categoria`.
+- **Explicación:**
+  - `req.query`: Permite obtener los valores enviados mediante query strings en la URL (ejemplo: `?categoria=Soporte`).
+  - `.toLowerCase()`: Se aplicó a la búsqueda para garantizar que la consulta sea insensible a mayúsculas y minúsculas.
+  - Si se incluye la categoría en la consulta, la API retorna la lista filtrada con `.filter()`; de lo contrario, entrega la totalidad del catálogo.

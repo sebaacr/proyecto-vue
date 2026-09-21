@@ -11,3 +11,10 @@
 Se configuró Vue Router para convertir la aplicación en una Single Page Application (SPA).
 - **Vistas implementadas:** `Inicio`, `Nosotros`, `Servicios` y `Contacto`.
 - **Navegación:** Se utilizó `<router-link>` para permitir la transición fluida entre vistas sin recargar la página y `<router-view>` para renderizar los componentes dinámicamente.
+
+
+## Parte 3 – Catálogo de servicios y componentes
+
+- **Organización de datos:** Se definió una colección de 6 servicios en `src/data/servicios.js` con nombre, categoría, descripción, precio y disponibilidad.
+- **Componente reutilizable:** Se creó el componente `TarjetaServicio.vue` para presentar visualmente cada oferta de manera consistente.
+- **Paso de Props:** La vista `ServiciosView.vue` recorre los elementos con `v-for` y los envía a `TarjetaServicio.vue` a través de props.

@@ -49,3 +49,13 @@
 - **Correcciones realizadas:**
   - Se corrigió la sintaxis de validación del formulario y se detuvo el guardado incompleto.
   - Se implementaron las funciones reactivas `getTotal()` y `getPorcentajeDefectuoso()` para calcular en tiempo real las cantidades y porcentajes de fallas por recepción.
+
+
+  ## Detalle e ítems de recepción
+
+- **Problemas encontrados:**
+  - Sintaxis incompleta y rota en la función `agregar()`.
+  - Inconsistencia en la propiedad de filtrado (`id_reception` en inglés vs `id_recepcion` en español).
+- **Correcciones realizadas:**
+  - Se completó la instrucción `store.items.push()` asignando correctamente la relación con la recepción seleccionada.
+  - Se corrigió la propiedad de filtrado a `id_recepcion` y se añadió la resolución visual del título del libro mediante `getTituloLibro()`.

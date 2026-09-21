@@ -27,3 +27,15 @@
 - **Problema encontrado:** La función `useRecepcionStore()` no devolvía el objeto `state`, por lo que ningún componente podía acceder a los datos compartidos. Además, había diferencias en los nombres de las llaves (`id_reception` vs `id_recepcion`) y la cantidad estaba guardada como texto.
 - **Corrección realizada:** Se actualizó `return state` en la función exportada y se normalizó la propiedad `id_recepcion` e `cantidad` como tipo numérico.
 - **Por qué debe compartirse:** El estado debe ser compartido para que las recepciones, libros, proveedores e ítems estén centralizados y accesibles desde cualquier componente de la aplicación de forma reactiva.
+
+
+## Gestión de libros
+
+- **Problemas encontrados:**
+  - La desestructuración `const { state } = useRecepcionStore()` resultaba en `undefined` porque el store devuelve la reactividad directamente.
+  - La condición para validar ISBN usaba la lógica `length < 10 && length < 13` que permitía ingresar valores no válidos.
+  - Inconsistencia entre la clave `anio_publicacion` del formulario y la propiedad `anio` usada en las colecciones del store.
+- **Correcciones realizadas:**
+  - Se asignó la referencia directa mediante `const store = useRecepcionStore()`.
+  - Se implementó la validación estricta para asegurar que la longitud del ISBN sea exactamente de 10 o 13 caracteres.
+  - Se unificó la propiedad del objeto como `anio` tanto en la reactividad del formulario como al insertar en `store.libros`.

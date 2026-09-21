@@ -39,3 +39,13 @@
   - Se asignó la referencia directa mediante `const store = useRecepcionStore()`.
   - Se implementó la validación estricta para asegurar que la longitud del ISBN sea exactamente de 10 o 13 caracteres.
   - Se unificó la propiedad del objeto como `anio` tanto en la reactividad del formulario como al insertar en `store.libros`.
+
+  ## Gestión de recepciones e ítems
+
+- **Problemas encontrados:**
+  - Sintaxis inválida en la función `guardar()` que interrumpía la ejecución del formulario.
+  - La tabla de recepciones mostraba valores estáticos (`0` y `NaN%`) en lugar de calcular dinámicamente los totales e ítems defectuosos.
+  - No se convertía el `id_proveedor` a tipo numérico al asociar la recepción.
+- **Correcciones realizadas:**
+  - Se corrigió la sintaxis de validación del formulario y se detuvo el guardado incompleto.
+  - Se implementaron las funciones reactivas `getTotal()` y `getPorcentajeDefectuoso()` para calcular en tiempo real las cantidades y porcentajes de fallas por recepción.

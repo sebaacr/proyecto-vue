@@ -32,3 +32,9 @@ Se configuró Vue Router para convertir la aplicación en una Single Page Applic
 - **Validaciones:** Se implementó una verificación antes del procesamiento para asegurar que todos los campos requeridos estén completos y que el correo contenga un formato válido.
 - **Preselección de servicios:** Si el usuario selecciona previamente un servicio en el catálogo, la vista captura dicha selección mediante `localStorage` y preselecciona automáticamente ese servicio en el menú desplegable.
 - **Confirmación:** Una vez completada una solicitud válida, se despliega un cuadro con el resumen completo de la información enviada.
+
+## Parte 6 – Diseño y revisión final
+
+- **Decisiones de diseño:** Se definió una paleta de colores azul corporativo (`#0284c7`, `#0f172a`), tipografía limpia (`Segoe UI`) e interfaces tipo tarjeta (cards) con bordes suaves para lograr un acabado ejecutivo.
+- **Responsividad:** Se estructuraron grillas con CSS Grid (`repeat(auto-fit, ...)` / `auto-fill`) y un layout flexible para adaptar la visualización tanto en dispositivos móviles como en pantallas de escritorio.
+- **Revisión final:** Se verificaron las rutas del navegador sin errores en la consola, la transmisión de props/emits en el catálogo, la preselección de servicios y las validaciones requeridas en el formulario de contacto.

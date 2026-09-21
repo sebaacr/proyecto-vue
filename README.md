@@ -27,3 +27,11 @@
 
 - **Nueva ruta creada:** `GET /api/servicios` para retornar el arreglo con los datos importados desde `./data/servicios`.
 - **Diferencia entre `res.send()` y `res.json()`:** `res.send()` envía respuestas HTTP generales (texto plano, HTML, buffer), mientras que `res.json()` convierte automáticamente objetos y arreglos de JavaScript a cadenas con formato JSON ajustando la cabecera `Content-Type: application/json`.
+
+## Parte 7 – Consulta por ID
+
+- **Implementación:** Se creó el endpoint `GET /api/servicios/:id`.
+- **Explicación:**
+  - `req.params`: Permite capturar los parámetros de segmento definidos en la ruta (`:id`).
+  - `Number()`: Convierte el parámetro recibido (que siempre llega como texto/string) a tipo numérico para poder realizar la búsqueda estricta (`===`) con el ID de los servicios.
+  - **Estado 404:** Es el código de respuesta HTTP (*Not Found*) utilizado cuando el recurso consultado no existe en los registros.
